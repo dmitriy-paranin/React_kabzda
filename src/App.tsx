@@ -2,25 +2,40 @@ import React from 'react';
 import './App.css';
 
 export function App() {
-  return (
-    <div>
-      <div>Name App / header</div>
-      <Accordion/>
-      <Raiting/>
-    </div>
-  );
+    return (
+        <div>
+            <AppTitle/>
+            <Accordion/>
+            <Raiting/>
+        </div>
+    )
+}
+
+let AppTitle = () => {
+    return <>Name App / header</>
 }
 
 let Accordion = () => {
-  return(<div>
-    <h3>Menu</h3>
-      <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-      </ul>
-  </div>)
+    return <div>
+        <AccordionTitle/>
+        <AccordionBody/>
+    </div>
+}
+
+let AccordionTitle = () => {
+    return <h3>Menu</h3>
+}
+
+let AccordionBody = () => {
+    return <>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </>
+
 }
 
 let Raiting = () => {
@@ -34,7 +49,5 @@ let Raiting = () => {
 }
 
 let Star = () => {
-    return (<div>
-        star
-    </div>)
+    return <>star</>
 }
