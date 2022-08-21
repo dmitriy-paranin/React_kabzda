@@ -1,53 +1,28 @@
 import React from 'react';
 import './App.css';
+import {Accordion} from "./components/Accordion/Accordion";
+import {Rating} from "./components/Rating/Rating";
 
 export function App() {
     return (
         <div>
             <AppTitle/>
-            <Accordion/>
-            <Raiting/>
+            Article 1
+            <Accordion title={"Title-1"}/>
+            <Rating value={3}/>
+            Article 2
+            <Accordion title={"Title-2"}/>
+            <Rating value={0}/>
+            <Rating value={1}/>
+            <Rating value={2}/>
+            <Rating value={3}/>
+            <Rating value={4}/>
+            <Rating value={5}/>
         </div>
     )
 }
 
 let AppTitle = () => {
-    return <>Name App / header</>
+    return <h2>Name App / header</h2>
 }
 
-let Accordion = () => {
-    return <div>
-        <AccordionTitle/>
-        <AccordionBody/>
-    </div>
-}
-
-let AccordionTitle = () => {
-    return <h3>Menu</h3>
-}
-
-let AccordionBody = () => {
-    return <>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-        </ul>
-    </>
-
-}
-
-let Raiting = () => {
-    return (<div>
-        <Star/>
-        <Star/>
-        <Star/>
-        <Star/>
-        <Star/>
-    </div>)
-}
-
-let Star = () => {
-    return <>star</>
-}
