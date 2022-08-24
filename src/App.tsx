@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
+import {OnOff} from "./components/OnOff";
 
 export function App() {
     return (
@@ -9,6 +10,9 @@ export function App() {
             <AppTitle/>
             Article 1
             <Accordion collapsed={true} title={"Title-1"}/>
+            <OnOff/>
+            <OnOff/>
+            <OnOff/>
             <Rating value={3}/>
             Article 2
             <Accordion collapsed={false} title={"Title-2"}/>
