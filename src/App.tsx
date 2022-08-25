@@ -9,19 +9,12 @@ export function App() {
         <div>
             <AppTitle/>
             Article 1
-            <Accordion collapsed={true} title={"Title-1"}/>
+            <Accordion title={"Title-1"}/>
             <OnOff/>
-            <OnOff/>
-            <OnOff/>
-            <Rating value={3}/>
             Article 2
-            <Accordion collapsed={false} title={"Title-2"}/>
-            <Rating value={0}/>
-            <Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={3}/>
-            <Rating value={4}/>
-            <Rating value={5}/>
+            <Accordion title={"Title-2"}/>
+            <Rating />
+
         </div>
     )
 }

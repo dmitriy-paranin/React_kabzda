@@ -1,26 +1,32 @@
-import React from "react";
+import React, {useState} from "react";
 
-type RatingType = {
-    value: number
-}
 type StarType = {
     selected: boolean
 }
+type RatingType = {
+    setValue: ()=>void
+}
 
 export let Rating = (props: RatingType) => {
+    let [value, setValue] = useState(1)
     return <div>
-        <Star selected={props.value > 0}/>
-        <Star selected={props.value > 1}/>
-        <Star selected={props.value > 2}/>
-        <Star selected={props.value > 3}/>
-        <Star selected={props.value > 4}/>
+        <Star selected={value > 0}/>
+        <Star selected={value > 1}/>
+        <Star selected={value > 2}/>
+        <Star selected={value > 3}/>
+        <Star selected={value > 4} />
     </div>
 }
 
 let Star = (props: StarType) => {
-    if (props.selected === true) {
-        return <span><b>star </b></span>
-    } else {
-        return <span>star </span>
+    let onClickBHandler = () => {
+
     }
+    let onClickHandler = () => {
+
+    }
+
+    return props.selected ?
+        <span onClick={onClickBHandler}><b>star </b></span> :
+        <span onClick={onClickHandler}>star </span>
 }
