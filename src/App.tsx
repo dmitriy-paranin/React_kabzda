@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
-import {Rating} from "./components/Rating/Rating";
+import {Rating, ValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff";
 
 export function App() {
-    let  [collapsed, setCollapsed] = useState (true);
-
+    let [collapsed, setCollapsed] = useState(true);
+    let [value, setValue] = useState<ValueType>(1);
+    let [on, setOn] = useState(false);
 
     return (
         <div>
@@ -16,8 +17,10 @@ export function App() {
                 collapsed={collapsed}
                 setCollapsed={setCollapsed}
                 title={"Title-1"}/>
-            <OnOff/>
-            <Rating />
+            <OnOff on={on}
+                   setOn={setOn}/>
+            <Rating value={value}
+                    setValue={setValue}/>
 
         </div>
     )
