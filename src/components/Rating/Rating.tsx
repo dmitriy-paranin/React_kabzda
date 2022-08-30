@@ -21,6 +21,10 @@ export let Rating = (props: RatingType) => {
     </div>
 }
 
+let starStyle = {
+    cursor: "pointer"
+}
+
 let Star = (props: StarType) => {
-    return <span onClick={ () => { props.setValue() } }>{ props.selected ? <b>star </b> : "star " }</span>
+    return <span style={starStyle} onClick={ () => { props.setValue() } }>{ props.selected ? <b>star </b> : "star " }</span>
 }
