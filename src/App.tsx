@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
 import {Rating, ValueType} from "./components/Rating/Rating";
-import {OnOff} from "./components/OnOff";
+import {OnOff} from "./components/OnOff/OnOff";
 
 export function App() {
     let [collapsed, setCollapsed] = useState(true);

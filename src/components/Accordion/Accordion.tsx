@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-type AccordionType={
+export type AccordionType={
     title: string
     collapsed: boolean
     setCollapsed: (collapsed: boolean)=>void
