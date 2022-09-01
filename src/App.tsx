@@ -22,6 +22,7 @@ export function App() {
             <Rating value={value}
                     setValue={setValue}/>
 
+
         </div>
     )
 }
