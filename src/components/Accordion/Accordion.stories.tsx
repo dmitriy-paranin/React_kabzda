@@ -17,10 +17,26 @@ CollapsedMode2.args = {
     title: "New title"
 }
 
-export const CollapsedMode = () => <Accordion collapsed={true} setCollapsed={action("collapsed or uncollapsed clicked")} title={"Title"}/> ;
-export const UncollapsedMode = () => <Accordion collapsed={false} setCollapsed={action("collapsed or uncollapsed clicked")} title={"Title"}/> ;
+export const CollapsedMode = () => <Accordion collapsed={true}
+                                              setCollapsed={action("collapsed or uncollapsed clicked")} title={"Title"}
+                                              items={[{title: "Dima", value: 1},
+                                                  {title: "Tanya", value: 2},
+                                                  {title: "Liza", value: 3}]}
+                                              onClick={}/>;
+export const UncollapsedMode = () => <Accordion collapsed={false}
+                                                setCollapsed={action("collapsed or uncollapsed clicked")}
+                                                title={"Title"}
+                                                items={[{title: "Dima", value: 1},
+                                                    {title: "Tanya", value: 2},
+                                                    {title: "Liza", value: 3}]}
+                                                onClick={}/>;
 
 export const ModeChanging = () => {
-    const [value, setValue ] = useState<boolean>(true);
-    return <Accordion collapsed={value} setCollapsed={setValue} title={"Title"}/>
+    const [value, setValue] = useState<boolean>(true);
+    return <Accordion collapsed={value}
+                      setCollapsed={setValue}
+                      title={"Title"}
+                      items={[{title: "Dima", value: 1},
+                          {title: "Tanya", value: 2},
+                          {title: "Liza", value: 3}]}/>
 };
