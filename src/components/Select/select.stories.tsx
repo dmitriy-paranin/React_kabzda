@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {action} from "@storybook/addon-actions";
 import {Select} from "./select";
 
@@ -8,22 +8,36 @@ export default {
 };
 
 
-export const WithValue = () =>
-    <Select anChange={action("value chainged")}
-            value={"3"}
-            items={[
-                {title: "Minsk", value: "1"},
-                {title: "Kiev", value: "2"},
-                {title: "London", value: "3"}
-            ]}
-    />;
+export const WithValue = () =>{
+    const [value, setValue] = useState("2");
 
-export const WithoutValue = () =>
-    <Select anChange={action("value chainged")}
-            items={[
-                {title: "Minsk", value: "1"},
-                {title: "Kiev", value: "2"},
-                {title: "London", value: "3"}
-            ]}
-    />;
+    return <>
+        <Select onChange={setValue}
+                value={value}
+                items={[
+                    {title: "Minsk", value: "1"},
+                    {title: "Kiev", value: "2"},
+                    {title: "London", value: "3"}
+                ]}
+        />
+    </>
+}
+
+
+export const WithoutValue = () =>{
+    const [value, setValue] = useState("2");
+
+    return <>
+        <Select onChange={setValue}
+                value={value}
+                items={[
+                    {title: "Minsk", value: "1"},
+                    {title: "Kiev", value: "2"},
+                    {title: "London", value: "3"}
+                ]}
+        />
+    </>
+
+}
+
 
