@@ -13,32 +13,27 @@ const onClickCallback = action("some item was clicked")
 const Template: Story<AccordionType> = (args) => <Accordion {...args} />;
 export const CollapsedMode2 = Template.bind({});
 CollapsedMode2.args = {
-    collapsed: true,
-    setCollapsed: action("collapsed or uncollapsed clicked"),
+    onClick:,
+    items:,
     title: "New title"
 }
 
-export const CollapsedMode = () => <Accordion collapsed={true}
-                                              setCollapsed={action("collapsed or uncollapsed clicked")} title={"Title"}
+export const CollapsedMode = () => <Accordion title={"Title"}
                                               items={[{title: "Dima", value: 1},
                                                   {title: "Tanya", value: 2},
                                                   {title: "Liza", value: 3}]}
-                                              onClick={onClickCallback}/>;
-export const UncollapsedMode = () => <Accordion collapsed={false}
-                                                setCollapsed={action("collapsed or uncollapsed clicked")}
-                                                title={"Title"}
+                                              />;
+export const UncollapsedMode = () => <Accordion title={"Title"}
                                                 items={[{title: "Dima", value: 1},
                                                     {title: "Tanya", value: 2},
                                                     {title: "Liza", value: 3}]}
-                                                onClick={onClickCallback}/>;
+                                                />;
 
 export const ModeChanging = () => {
-    const [value, setValue] = useState<boolean>(true);
-    return <Accordion collapsed={value}
-                      setCollapsed={setValue}
-                      title={"Title"}
+
+    return <Accordion title={"Title"}
                       items={[{title: "Dima", value: 1},
                           {title: "Tanya", value: 2},
                           {title: "Liza", value: 3}]}
-                      onClick={onClickCallback}/>
+                      onClick={}/>
 };
