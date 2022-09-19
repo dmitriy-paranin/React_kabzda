@@ -19,11 +19,13 @@ CollapsedMode2.args = {
 }
 
 export const CollapsedMode = () => <Accordion title={"Title"}
+                                              onClick={}
                                               items={[{title: "Dima", value: 1},
                                                   {title: "Tanya", value: 2},
                                                   {title: "Liza", value: 3}]}
                                               />;
 export const UncollapsedMode = () => <Accordion title={"Title"}
+                                                onClick={}
                                                 items={[{title: "Dima", value: 1},
                                                     {title: "Tanya", value: 2},
                                                     {title: "Liza", value: 3}]}

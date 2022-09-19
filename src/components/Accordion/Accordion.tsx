@@ -10,39 +10,45 @@ export type AccordionType={
     onClick: (value: any) => void
 }
 
-type AccordionBodyType={
-    items: ItemType[]
-    onClickBody: (value: any) => void
-}
-
-
-
 
 export let Accordion = (props: AccordionType) => {
+
     let [collapsed, setСollapsed] = useState<boolean>(true);
+    const toggleItems = () => setСollapsed(!collapsed);
+
 
     return <div>
         <AccordionTitle title={props.title}
-                        onClickTitle={()=>setСollapsed(!collapsed)}
+                        slectedItem={slectedItem}
+                        onClickTitle={toggleItems}
                         />
-       {!collapsed && <AccordionBody onClickBody={props.onClick} items={props.items}/>}
+       {!collapsed && <AccordionBody onChangeItem={setValue}
+                                     items={props.items}/>}
     </div>
 }
 
-
 type AccordionTitleType={
+    slectedItem: ItemType
     title: string
     onClickTitle: ()=>void
 }
 
 let AccordionTitle = (props: AccordionTitleType) => {
-    return <h3 onClick={ () => props.onClickTitle() }>{props.title}</h3>
+    let [value, setValue] = useState(1);
+    const slectedItem = props.items.find(i => i.value === props.value);
+
+    return <h3 onClick={ () => props.onClickTitle() }>{props.slectedItem && props.slectedItem.title}</h3>
+}
+
+type AccordionBodyType={
+    items: ItemType[]
+    onChangeItem: (value: any) => void
 }
 
 let AccordionBody = (props: AccordionBodyType) => {
     return <>
         <ul>
-            {props.items.map((i, index) => <li onClick={()=>{props.onClickBody(i.value)}} key={index}>{i.title}</li>)}
+            {props.items.map((i, index) => <li onClick={()=>{props.onChangeItem(i.value)}} key={index}>{i.title}</li>)}
         </ul>
     </>
 }
