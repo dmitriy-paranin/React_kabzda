@@ -8,24 +8,21 @@ export default {
     component: Accordion
 };
 
-const onClickCallback = action("some item was clicked")
-
 const Template: Story<AccordionType> = (args) => <Accordion {...args} />;
 export const CollapsedMode2 = Template.bind({});
 CollapsedMode2.args = {
-    onClick:,
-    items:,
+    items:[{title: "Dima", value: 1},
+        {title: "Tanya", value: 2},
+        {title: "Liza", value: 3}],
     title: "New title"
 }
 
 export const CollapsedMode = () => <Accordion title={"Title"}
-                                              onClick={}
                                               items={[{title: "Dima", value: 1},
                                                   {title: "Tanya", value: 2},
                                                   {title: "Liza", value: 3}]}
                                               />;
 export const UncollapsedMode = () => <Accordion title={"Title"}
-                                                onClick={}
                                                 items={[{title: "Dima", value: 1},
                                                     {title: "Tanya", value: 2},
                                                     {title: "Liza", value: 3}]}
@@ -37,5 +34,5 @@ export const ModeChanging = () => {
                       items={[{title: "Dima", value: 1},
                           {title: "Tanya", value: 2},
                           {title: "Liza", value: 3}]}
-                      onClick={}/>
+                      />
 };
