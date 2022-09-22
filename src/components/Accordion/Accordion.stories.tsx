@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {action} from "@storybook/addon-actions";
 import {Accordion, AccordionType} from "./Accordion";
 import {Story} from "@storybook/react";
 
@@ -17,16 +16,7 @@ CollapsedMode2.args = {
     title: "New title"
 }
 
-export const CollapsedMode = () => <Accordion title={"Title"}
-                                              items={[{title: "Dima", value: 1},
-                                                  {title: "Tanya", value: 2},
-                                                  {title: "Liza", value: 3}]}
-                                              />;
-export const UncollapsedMode = () => <Accordion title={"Title"}
-                                                items={[{title: "Dima", value: 1},
-                                                    {title: "Tanya", value: 2},
-                                                    {title: "Liza", value: 3}]}
-                                                />;
+
 
 export const ModeChanging = () => {
 
